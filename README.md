@@ -1,6 +1,15 @@
 # MatrixMultiply
 Use MapReduce to compute the product of two matrix.
 
+# Usage
+We need put two files (matrixA and matrixB) onto the HDFS in advance. The shell ommand is:<br />
+<font color="gray">hdfs dfs -put matrixA input</font><br />
+<font color="gray">jdfs dfs -put matrixB input</font><br />
+matrixA and matrixB is the two files like the picture pic1 and pic2 below.<br/>
+Then, we can run the MatrixMultiply.java. We can check the result by the below shell command:<br />
+<font color="gray">hdfs dfs -cat /result/part-r-00000</font><br />
+The result is like the picture pic3 below.<br />
+
 # Illustration
 ![](images/matrixA.png)<br />
 pic1: Matrix A (4x5)<br />
