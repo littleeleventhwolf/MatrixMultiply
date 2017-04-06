@@ -144,7 +144,7 @@ public class MatrixMultiply {
      * @throws ClassNotFoundException
      */
     public static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException {
-        run("input/matrixA,input/matrixB", "file:///tmp/result", 4, 5);
+        run("input/matrixA,input/matrixB", "result", 4, 5);
     }
 
 }
