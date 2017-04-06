@@ -3,10 +3,12 @@ Use MapReduce to compute the product of two matrix.
 
 # Illustration
 ![](images/matrixA.png)<br />
-pic1: Matrix A (4x5)
+pic1: Matrix A (4x5)<br />
+The first column is the row number of matrix A.
 
 ![](images/matrixB.png)<br />
-pic2: Transpodition of Matrix B (5x5)
+pic2: Transposition of Matrix B (5x5)
+The first column is the row number of the transposition of matrix B.
 
 We get the product of matrix A and matrix B by computing the A\*(transopisition of B).
 
