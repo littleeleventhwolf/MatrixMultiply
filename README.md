@@ -26,3 +26,6 @@ In reduce stage: if two keys are same, split the value into an array, and multip
 
 ![](images/result.png)<br />
 pic3: The Result File
+
+# ToDO
+Not hard code.<br />
