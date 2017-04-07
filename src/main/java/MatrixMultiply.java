@@ -114,10 +114,10 @@ public class MatrixMultiply {
      * @throws ClassNotFoundException
      * @throws InterruptedException
      */
-    public static Boolean run(String input, String output, Integer Arow, Integer Bcolumn)
+    public static Boolean run(String defaultFS, String input, String output, Integer Arow, Integer Bcolumn)
             throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://localhost:9000");
+        conf.set("fs.defaultFS", defaultFS);
         // 初始化全局常量
         conf.setInt("row", Arow);
         conf.setInt("column", Bcolumn);
@@ -144,7 +144,17 @@ public class MatrixMultiply {
      * @throws ClassNotFoundException
      */
     public static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException {
-        run("input/matrixA,input/matrixB", "result", 4, 5);
+        // 判断命令行参数是否符合要求
+        if(args.length < 5) {
+            System.err.println("Usage: java MatrixMultiply <hdfs_defaultFS> <input_files> <output_path>" +
+                    " <matrixA_rows> <matrixB_columns>");
+            System.err.println("Example: java MatrixMultiply hdfs://localhost:9000 input/matrixA,input/matrixB result" +
+                    " 4 5");
+            System.exit(1);
+        }
+        //run("hdfs://localhost:9000","input/matrixA,input/matrixB", "result", 4, 5);
+        // 将上面的硬编码参数改为命令行参数
+        run(args[0],args[1], args[2], Integer.valueOf(args[3]), Integer.valueOf(args[4]));
     }
 
 }
